@@ -32,6 +32,7 @@ A is a mountain, as defined above.
 
 //Array given is definitely a mountain, so just need to find the highest number's index. 
 //I think they may have just been throwing out the extra info about the mountain to force us to isolate the problem.
+// Solution is O(n)
 var peakIndexInMountainArray = function(A) {
     var peak = 0;
     var peakIndex;
