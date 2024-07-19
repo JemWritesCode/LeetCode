@@ -1,13 +1,15 @@
 ﻿ bool IsAnagram(string s, string t) {
-        // sort them both and see if they're the same?
-        String.Concat(s.OrderBy(c =>c));
-        String.Concat(t.OrderBy(c =>c));
-        Console.WriteLine(s);
-        Console.WriteLine(t);
-        return Equals(s,t);
+        // sort them both and see if they're the same
+        char[] ss = s.ToCharArray();
+        char[] tt = t.ToCharArray();
+        Array.Sort(ss);
+        Array.Sort(tt);
+        // Console.WriteLine(ss);
+        // Console.WriteLine(tt);
+        return ss.SequenceEqual(tt);
     }
 
 
-//Tests
-Console.WriteLine(IsAnagram("cat", "rat").ToString());
-Console.WriteLine(IsAnagram("tar", "rat").ToString());
+//// Tests
+// Console.WriteLine(IsAnagram("cat", "rat").ToString());
+// Console.WriteLine(IsAnagram("tar", "rat").ToString());

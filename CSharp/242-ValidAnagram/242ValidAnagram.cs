@@ -1,10 +1,18 @@
+/* SORT AND COMPARE ARRAYS
+Time Complexity: O(N Log N)
+Space Complexity: O(1)
+*/
 public class Solution {
-    public bool IsAnagram(string s, string t) {
-        // sort them both and see if they're the same?
-        String.Concat(s.OrderBy(c =>c));
-        String.Concat(t.OrderBy(c =>c));
-        console.write(s);
-        console.write(t);
-        return Equals(s,t);
+ public bool IsAnagram(string s, string t) {
+        if (s.Length != t.Length) return false;
+        char[] ss = s.ToCharArray();
+        char[] tt = t.ToCharArray();
+        Array.Sort(ss);
+        Array.Sort(tt);
+        return ss.SequenceEqual(tt);
     }
 }
+
+//// Tests
+// Console.WriteLine(IsAnagram("cat", "rat").ToString());
+// Console.WriteLine(IsAnagram("tar", "rat").ToString());
