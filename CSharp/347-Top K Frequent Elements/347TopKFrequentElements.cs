@@ -1,6 +1,4 @@
-
-
-////////////////////////////////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////////////////////////////
 // // Priority Queue (Heap)
 // // Time Complexity: O(n *logk) (Leetcode Complexity Analyzer confirmed)
 // // Space Complexity: O(n + k)
@@ -11,11 +9,11 @@
 //         // Make a dictionary to store the frequency of each unique element in nums
 //         // MapKey = numValue && MapValue is a frequency counter.
 //         Dictionary<int, int> freqMap = new();
-//         for (int i = 0; i < nums.Length; i++){
-//             if (freqMap.ContainsKey(nums[i]))
-//                 freqMap[nums[i]]++;
+//         foreach (var num in nums){
+//             if (freqMap.ContainsKey(num))
+//                 freqMap[num]++;
 //             else
-//                 freqMap[nums[i]] = 1;
+//                 freqMap[num] = 1;
 //         }
 
 //     // put each unique number in the priority queue (C# implements this as min-heap)
