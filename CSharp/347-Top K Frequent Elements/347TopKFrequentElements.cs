@@ -1,4 +1,42 @@
-// ////////////////////////////////////////////////////////////////////////////////////
+// Bucket Sort
+// Use the index as the counter, and the value is a list of elements of that index frequency
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+public class Solution {
+    public int[] TopKFrequent(int[] nums, int k){
+        // Make a dictionary to store the frequency of each unique element in nums
+        // MapKey = NumValue && MapValue = frequency counter
+        Dictionary<int, int> freqMap = new Dictionary<int, int>();
+        foreach (var num in nums){
+            if (freqMap.ContainsKey(num))
+                freqMap[num]++;
+            else
+                freqMap[num] = 1;
+        }
+
+        // A list of list to store elements with the same frequency
+        // have to +1 because arrays start at 0 but we're using index to count freq
+        // (do I have to though? I know that'd make the count accurate but the next section will just count from the end?)
+        List<int>[] buckets = new List<int>[nums.Length + 1];
+        foreach (var num in freqMap.Keys){
+            int freq = freqMap[num];
+            if (buckets[freq] == null)
+                buckets[freq] = new List<int>();
+            buckets[freq].Add(num);
+        }
+
+        // Start at the end of the buckets array (highest frequency number)
+        // work backwards for k elements
+        List<int> result = new List<int>();
+        for (int i = buckets.Length - 1; i >= 0 && result.Count < k; i--){
+            if(buckets[i] != null)
+                result.AddRange(buckets[i]);
+        }
+        return result.ToArray();
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////
 // // Priority Queue (Heap)
 // // Time Complexity: O(n *logk) (Leetcode Complexity Analyzer confirmed)
 // // Space Complexity: O(n + k)
