@@ -1,7 +1,7 @@
-/* BRUTE FORCE
-Time Complexity: O(N^2)
-Space Complexity: O(1)
-*/
+// /* BRUTE FORCE
+// Time Complexity: O(N^2)
+// Space Complexity: O(1)
+// */
 
 // public class Solution {
 //     public bool ContainsDuplicate(int[] nums)
