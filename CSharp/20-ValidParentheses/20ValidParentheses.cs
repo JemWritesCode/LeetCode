@@ -9,6 +9,13 @@
 // off the top of the stack.
 // the stack keeps in order what the closing brackets are supposed to be.
 
+// example
+// string: ([{()}])
+// pushed into stack )]})
+// then you start to pop as you get to the closing ones
+// the "top" of the stack is to the right.
+// you pop ), then }, then ], then ) which also matches the order of the rest of the string.
+
 public class Solution {
     public bool IsValid(string s) {
         var k = new Stack<char>();
