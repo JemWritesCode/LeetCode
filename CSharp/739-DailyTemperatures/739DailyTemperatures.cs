@@ -1,7 +1,7 @@
 // MONOTONIC STACK
-// Time Complexity: O(n)
+// Time Complexity: O(n) (Analyze Complexity Confirmed)
 // Just going through each item once and then putting it into the stack.
-// Space Complexity: O(n)
+// Space Complexity: O(n) (Analyze Complexity Confirmed)
 // The stack can have up to all the elements in temps.
 
 public class Solution {
