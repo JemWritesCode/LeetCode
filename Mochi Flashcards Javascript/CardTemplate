@@ -1,8 +1,8 @@
-<< Name and link to leetcode problem >>
+[<< Name >>](<< Link >>)  
 << Problem Description >>
 ---
 Problem Solution: {{ << Problem Solution Concept >> }}
 ---
-Time Complexity: {{ << Time Complexity >> }}
+Time Complexity: {{ << Time Complexity >> }} -- {{ << Time Complexity Explain >>  }}
 ---
-Space Complexity: {{ << Space Complexity >> }}
+Space Complexity: {{ << Space Complexity >> }} -- {{ << Space Complexity Explain >> }}
