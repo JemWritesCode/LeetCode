@@ -14,13 +14,12 @@ Space Complexity: O(n)
  * @return {TreeNode}
  */
 var invertTree = function(root) {
-    if (!root) return null;
-    const stack = [root];
-    while (stack.length) {
-        const node = stack.pop();
-        [node.left, node.right] = [node.right, node.left];
-        if (node.left) stack.push(node.left);
-        if (node.right) stack.push(node.right);
-    }
-    return root;
+    if (root === null) return null;
+
+    const node = new TreeNode(root.val);
+
+    node.right = invertTree(root.left);
+    node.left = invertTree(root.right);
+
+    return node;
 };
