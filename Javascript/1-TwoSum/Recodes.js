@@ -9,7 +9,7 @@ var twoSum = function(nums, target) {
     for (let i = 0; i < nums.length; i++){
         const diff = target - nums[i];
         if (map.has(diff))
-            reteurn [map.get(diff), i];
+            return [map.get(diff), i];
         map.set(nums[i], i);
     }
     return null;
