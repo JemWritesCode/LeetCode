@@ -1,14 +1,4 @@
-/*
-Time Complexity: O(2^n)
-For each element n in the nums array we can either add it or not add it
-
-Space Complexity: O(2^n)
-we have to store each 2^n subsets in the subsets array. 
-each of these are sub arrays so it's really O(n * 2^n)
-but we only take the dominant terms for Big O notation
-
-*/
-
+// #region Jan 11 2025
 /**
  * @param {number[]} nums
  * @return {number[][]}
@@ -24,3 +14,4 @@ var subsets = function(nums) {
     }
     return subsets;
 };
+// #endregion
