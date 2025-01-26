@@ -1,3 +1,32 @@
+// #region Jan 26 2025
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+ // Time Complexity: If there is a cycle you will have to potentially visit every node in the list(n) plus the length of the cycle (k). k is always less than the length of n. So it simplifies to O(n)
+ // Space Complexity: O(1) - No matter the size of the linked list we just need the slow and fast pointers to go through it. 
+ var hasCycle = function(head) {
+    if (!head || !head.next) return false;
+    let slow = head,
+        fast = head.next;
+    while (slow !== fast){
+        if (!fast || !fast.next) return false; //we've reached the end or next to the end.
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    // reach here if slow is the same as fast.
+    return true;
+};
+// #endregion
+
 // #region Jan 24 2025
 // Two minutes.
 /**

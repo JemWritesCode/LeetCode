@@ -12,6 +12,6 @@ need to store the cleaned string in a new variable the same size as the initial 
  * @return {boolean}
  */
 var isPalindrome = function(s) {
-    const cleanStr = s.replace(/[^a-z0-9]/gi,"").toLowerCase();
+    const cleanStr = s.toLowerCase().replace(/[^a-z0-9]/g, "");
     return cleanStr === cleanStr.split("").reverse().join("");
 };
