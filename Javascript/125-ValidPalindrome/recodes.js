@@ -1,3 +1,17 @@
+// #region Jan 27 2025
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+ // Time complexity: O(n) must visit every character of the string to clean it. also O(n) operations for split, reverse, and join. O(4n) remove the constants and simplifies to O(n)
+ // Space Complexity: O(n). Because cleanStr will have to hold up to every single character of the string in the worst case where every character is alphanumeric. 
+ var isPalindrome = function(s) {
+    const cleanStr = s.toLowerCase().replace(/[^a-z0-9]/g, "");
+    return cleanStr === cleanStr.split("").reverse().join("");
+};
+
+// #endregion
+
 // #region Jan 26 2025
 /**
  * @param {string} s
