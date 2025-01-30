@@ -1,3 +1,32 @@
+// #region Jan 29 2025
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+ // Floyd's Cycle Detection Algorithm 
+ // Time complexity: O(n) where n is the number of nodes in the linked list. We really travel n + k where k is the number of nodes in the cycle in the worst case but k is smaller than n so we drop constants and say O(n)
+ // Space Complexity: O(1) we just need fast and slow pointers no matter the size of the linked list. 
+ var hasCycle = function(head) {
+    if (!head || !head.next) return false;
+    let slow = head,
+        fast = head.next;
+    while (slow !== fast){
+        if (!fast || !fast.next) return false;
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    return true;
+};
+// #endregion 
+
 // #region Jan 28 2025
 
 /**

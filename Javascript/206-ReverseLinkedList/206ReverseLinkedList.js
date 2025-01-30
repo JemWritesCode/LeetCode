@@ -1,3 +1,10 @@
+// There are two approaches for this. 
+// Reverse the string
+// Two pointers. 
+// Obviously two pointers is longer but it's probably given as a solution because it's an easy introduction to two pointers.
+// so I should come up with a javascript implementation for that to make sure I have it
+
+
 /*
 Time Complexity: O(n)
 We go through the linked list in a single pass
