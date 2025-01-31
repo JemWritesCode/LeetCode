@@ -1,3 +1,18 @@
+// #region Jan 30 2025
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+
+ // Time Complexity: O(n) gotta visit every char in s. 5n drop constants n
+ // Space complexity: O(n) cleanstr has to hold all of s if every char is alphanumeric 
+ var isPalindrome = function(s) {
+    const cleanStr = s.toLowerCase().replace(/[^a-z0-9]/g, "");
+    return cleanStr === cleanStr.split("").reverse().join("");
+};
+
+// #endregion 
+
 // #region Jan 29 2025
 
 /**
