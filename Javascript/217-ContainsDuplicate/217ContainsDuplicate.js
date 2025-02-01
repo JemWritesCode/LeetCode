@@ -1,4 +1,4 @@
-/* Set - Hash Table
+/* Hash Set One Line Solution 
 Make a set which can only hold unique values and compare the size of it to the length of nums 
 
 Time Complexity: O(n) 
@@ -15,4 +15,16 @@ We need to make a set that has to hold up to n elements from the nums array.
  */
 var containsDuplicate = function(nums){
     return new Set(nums).size != nums.length;
+};
+////////////////////////////////////////////////////////
+// Hash Set v2 -- exit early if a duplicate is found
+// still O(n) but Omega runtime is 1
+
+var containsDuplicate = function(nums) {
+    const seen = new Set();
+    for (const num of nums) {
+        if (seen.has(num)) return true; 
+        seen.add(num); 
+    }
+    return false;
 };
