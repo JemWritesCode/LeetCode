@@ -1,3 +1,17 @@
+// #region Feb 1 2025
+// Time Complexity: O(n) - Worst case no duplicates have to add everything to the seen set.
+// Space Complexity: O(n) worst case no duplicates eerything added to the seen set.
+
+var containsDuplicate = function(nums) {
+    const seen = new Set();
+    for (const num of nums){
+        if (seen.has(num)) return true;
+        seen.add(num);
+    }
+    return false;
+};
+
+// #endregion 
 // #region Jan 5 2025
 
 var containsDuplicate = function(nums) {
