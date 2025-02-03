@@ -1,3 +1,18 @@
+// #region Feb 2 2025
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+
+ // time: o(n)
+ // space: o(n)
+ var isPalindrome = function(s) {
+    const cleanStr = s.toLowerCase().replace(/[^a-z0-9]/g, "");
+    return cleanStr === cleanStr.split("").reverse().join("");
+};
+
+// #endregion
+
 // #region Feb 1 2025
 /**
  * @param {string} s
