@@ -1,3 +1,21 @@
+// #region Feb 7 2025
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+
+ // Time Complexity: O(n) where n is equal to the number of elements in the nums array. because in the worst case there are no duplicates so you must traverse the entire nums array.
+ // Space Complexity: O(n) where n is equal to the number of elements in the nums array. because in the worst case there are no duplicates so the seen set has to hold all of the elements of the nums array.
+ var containsDuplicate = function(nums) {
+    const seen = new Set();
+    for (num of nums){
+        if (seen.has(num)) return true;
+        seen.add(num);
+    }
+    return false;
+};
+// #endregion 
+
 // #region Feb 6 2025
 /**
  * @param {number[]} nums
