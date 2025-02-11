@@ -1,3 +1,17 @@
+// #region Feb 11 2025
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+
+ // Time Complexity: O(n) where n is the number of chars in the s string. every operation we call on the string is an O(n) operation so it's really O(5n) because of toLowerCase, replace, split, reverse, and join. But we generally drop constants when talking BigO so it becomes O(n).
+ // Space Complexity: O(n) where n is the number of chars in the s string. Because in the worst case the s string is already all alphanumeric so cleanStr becomes a copy of s. 
+ var isPalindrome = function(s) {
+    const cleanStr = s.toLowerCase().replace(/[^a-z0-9]/g, "");
+    return cleanStr === cleanStr.split("").reverse().join("");
+};
+// #endregion
+
 // #region Feb 9 2025
 /**
  * @param {string} s

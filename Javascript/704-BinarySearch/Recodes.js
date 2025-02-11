@@ -1,3 +1,20 @@
+//  #region Feb 11 2025
+// Time Complexity: O(logn) where n is the number of elements in the nums array. We divide it in half each time as we search.
+// Space Complexity: O(1) we just need the low and high pointers no matter the size of the nums array. 
+var search = function (nums, target){
+    let low = 0,
+        high = nums.length - 1;
+    while (low <= high){
+        let mid = Math.floor((low + high) / 2);
+        if (nums[mid] === target) return mid;
+        else if (target < nums[mid]) high = mid - 1;
+        else low = mid + 1;
+    }
+    return -1;
+}
+
+// #endregion
+
 // #region Feb 8 2025
 // Time Complexity: O(log n) where n is the number of elements in the nums array. We divide it in half each time as we search for target.
 // Space Complexity: O(1) we just need the low and high pointers no matter the size of the nums array.
