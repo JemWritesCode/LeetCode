@@ -1,4 +1,19 @@
-// #region Feb 15 2025
+// #region 17 Feb 16 2025
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+
+ // Time Complexity: O(n) where n is the number of chars in the string s. We are doing 5 O(n) operations with toLowercase, replace, split, reverse, and join. This gives us O(5n). But we drop constants when we are talking about BigO notation so it becomes O(n).
+ // Space Complexity: O(n) where n is the number of chars in the string s. In the worst case scenario the s string is already all alphanumeric characters so cleanStr is just a copy of s. 
+ var isPalindrome = function(s) {
+    const cleanStr = s.toLowerCase().replace(/[^a-z0-9]/g, "");
+    return cleanStr === cleanStr.split("").reverse().join("");
+};
+
+// #endregion
+
+// #region 16 Feb 15 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -13,7 +28,7 @@
 
 // #endregion
 
-// #region Feb 11 2025
+// #region 15 Feb 11 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -27,7 +42,7 @@
 };
 // #endregion
 
-// #region Feb 9 2025
+// #region 14 Feb 9 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -41,7 +56,7 @@
 
 // #endregion
 
-// #region Feb 8 2025
+// #region 13 Feb 8 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -55,7 +70,7 @@
 };
 // #endregion
 
-// #region Feb 7 2025
+// #region 12 Feb 7 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -69,7 +84,7 @@
 
 // #endregion
 
-// #region Feb 6 2025
+// #region 11 Feb 6 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -83,7 +98,7 @@
 };
 // #endregion 
 
-// #region Feb 2 2025
+// #region 10 Feb 2 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -98,7 +113,7 @@
 
 // #endregion
 
-// #region Feb 1 2025
+// #region 9 Feb 1 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -111,7 +126,7 @@
 };
 // #endregion
 
-// #region Jan 31 2025
+// #region 8 Jan 31 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -126,7 +141,7 @@
 
 // #endregion 
 
-// #region Jan 30 2025
+// #region 7 Jan 30 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -141,7 +156,7 @@
 
 // #endregion 
 
-// #region Jan 29 2025
+// #region 6 Jan 29 2025
 
 /**
  * @param {string} s
@@ -156,7 +171,7 @@
 
 // #endregion
 
-// #region Jan 28 2025
+// #region 5 Jan 28 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -169,7 +184,7 @@
 };
 // #endregion
 
-// #region Jan 27 2025
+// #region 4 Jan 27 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -183,7 +198,7 @@
 
 // #endregion
 
-// #region Jan 26 2025
+// #region 3 Jan 26 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -196,7 +211,7 @@
 };
 // #endregion
 
-// #region Jan 26 2025
+// #region 2 Jan 26 2025
 // got rid of the i flag for ignore case. we can just make it lowercase before we run regex replace on it.
 
 /**
@@ -211,7 +226,7 @@
 };
 // #endregion
 
-// #region Jan 16 2025
+// #region 1 Jan 16 2025
 /**
  * @param {string} s
  * @return {boolean}
