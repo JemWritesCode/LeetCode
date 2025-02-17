@@ -1,4 +1,23 @@
-// #region Feb 16 2025
+// #region 16 -- Feb 17 2025
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+
+ // Time Complexity: O(n) where n is the number of elements in the nums array. In the worst case scenario there is no duplicate and we have to go through the entire nums array looking for one.
+ // Space Complexity: O(n) where n is the number of elements in the nums array. In the worst case there is no duplicate so the Set ends up having every element from the nums array. 
+ var containsDuplicate = function(nums) {
+    const seen = new Set();
+    for (const num of nums){
+        if (seen.has(num)) return true;
+        seen.add(num);
+    }
+    return false;
+};
+
+// #endregion 
+
+// #region 15 --  Feb 16 2025
 /**
  * @param {number[]} nums
  * @return {boolean}
@@ -17,7 +36,7 @@
 
 // #endregion 
 
-// #region Feb 15 2025
+// #region 14 -- Feb 15 2025
 /**
  * @param {number[]} nums
  * @return {boolean}
@@ -36,7 +55,7 @@
 
 // #endregion 
 
-// #region Feb 13 2025
+// #region 13 -- Feb 13 2025
 /**
  * @param {number[]} nums
  * @return {boolean}
@@ -55,7 +74,7 @@ var containsDuplicate = function(nums) {
 
 // #endregion
 
-// #region Feb 12 2025
+// #region 12 -- Feb 12 2025
 /**
  * @param {number[]} nums
  * @return {boolean}
@@ -74,7 +93,7 @@ var containsDuplicate = function(nums) {
 
 // #endregion 
 
-// #region Feb 11 2025
+// #region 11 -- Feb 11 2025
 /**
  * @param {number[]} nums
  * @return {boolean}
@@ -93,7 +112,7 @@ var containsDuplicate = function(nums) {
 
 // #endregion 
 
-// #region Feb 10 2025
+// #region 10 -- Feb 10 2025
 /**
  * @param {number[]} nums
  * @return {boolean}
@@ -112,7 +131,7 @@ var containsDuplicate = function(nums) {
 
 // #endregion 
 
-// #region Feb 9 2025
+// #region 9 -- Feb 9 2025
 // Time complexity: O(n) where n is the number of elements in nums. In the worst case scenario there are no duplicates so we traverse the entire nums array.
 // Space Complexity: O(n) where n is the number of elements in nums. In the worst case scenario there are no duplicates so seen becomes a copy of nums.
 var containsDuplicate = function(nums) {
@@ -126,7 +145,7 @@ var containsDuplicate = function(nums) {
 
 // #endregion
 
-// #region Feb 8 2025
+// #region 8 -- Feb 8 2025
 /**
  * @param {number[]} nums
  * @return {boolean}
@@ -145,7 +164,7 @@ var containsDuplicate = function(nums) {
 
 // #endregion
 
-// #region Feb 7 2025
+// #region 7 -- Feb 7 2025
 /**
  * @param {number[]} nums
  * @return {boolean}
@@ -163,7 +182,7 @@ var containsDuplicate = function(nums) {
 };
 // #endregion 
 
-// #region Feb 6 2025
+// #region 6 -- Feb 6 2025
 /**
  * @param {number[]} nums
  * @return {boolean}
@@ -181,7 +200,7 @@ var containsDuplicate = function(nums) {
 };
 
 // #endregion
-// #region Feb 4 2025
+// #region 5 -- Feb 4 2025
 /**
  * @param {number[]} nums
  * @return {boolean}
@@ -200,7 +219,7 @@ var containsDuplicate = function(nums) {
 
 // #endregion 
 
-// #region Feb 2 2025
+// #region 4 -- Feb 2 2025
 /**
  * @param {number[]} nums
  * @return {boolean}
@@ -217,7 +236,7 @@ var containsDuplicate = function(nums) {
     return false;
 };
 // #endregion
-// #region Feb 1 2025
+// #region 3 -- Feb 1 2025
 // Time Complexity: O(n) - Worst case no duplicates have to add everything to the seen set.
 // Space Complexity: O(n) worst case no duplicates eerything added to the seen set.
 
@@ -231,14 +250,14 @@ var containsDuplicate = function(nums) {
 };
 
 // #endregion 
-// #region Jan 5 2025
+// #region 2 -- Jan 5 2025
 
 var containsDuplicate = function(nums) {
     return nums.length != new Set(nums).size;
 };
 // #endregion
 
-// #region Jan 4 2025
+// #region 1 -- Jan 4 2025
 var containsDuplicate = function(nums){
     return new Set(nums).size != nums.length;
 };

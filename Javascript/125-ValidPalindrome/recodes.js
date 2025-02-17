@@ -1,4 +1,19 @@
-// #region 17 Feb 16 2025
+// #region 18 -- Feb 18 2025
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+
+ // Time Complexity: O(n) where n is the number of characters in the s string. We are calling 5 O(n) operations on it with toLowerCase, replace, split, reverse, and join which gives us O(5n). But we generally drop the constants when talking Big O so it becomes O(n). 
+// Space Complexity: O(n) where n is the number of characters in the s string. In the worst case scenario s is already all alphanumeric characters so cleanStr just becomes a copy of s. 
+var isPalindrome = function(s) {
+    const cleanStr = s.toLowerCase().replace(/[^a-z0-9]/g, "");
+    return cleanStr === cleanStr.split("").reverse().join("");
+};
+
+// #endregion 
+
+// #region 17 -- Feb 16 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -13,7 +28,7 @@
 
 // #endregion
 
-// #region 16 Feb 15 2025
+// #region 16 -- Feb 15 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -27,8 +42,8 @@
 };
 
 // #endregion
-
-// #region 15 Feb 11 2025
+ --
+// #region 15 -- Feb 11 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -41,8 +56,8 @@
     return cleanStr === cleanStr.split("").reverse().join("");
 };
 // #endregion
-
-// #region 14 Feb 9 2025
+ --
+// #region 14 -- Feb 9 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -55,8 +70,8 @@
 };
 
 // #endregion
-
-// #region 13 Feb 8 2025
+ --
+// #region 13 -- Feb 8 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -69,8 +84,8 @@
     return cleanStr === cleanStr.split("").reverse().join("");
 };
 // #endregion
-
-// #region 12 Feb 7 2025
+ --
+// #region 12 -- Feb 7 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -83,8 +98,8 @@
 };
 
 // #endregion
-
-// #region 11 Feb 6 2025
+ --
+// #region 11 -- Feb 6 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -97,8 +112,8 @@
     return cleanStr === cleanStr.split("").reverse().join("");
 };
 // #endregion 
-
-// #region 10 Feb 2 2025
+ --
+// #region 10 -- Feb 2 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -113,7 +128,7 @@
 
 // #endregion
 
-// #region 9 Feb 1 2025
+// #region 9 -- Feb 1 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -125,8 +140,8 @@
     return cleanStr === cleanStr.split("").reverse().join("");
 };
 // #endregion
-
-// #region 8 Jan 31 2025
+ --
+// #region 8 -- Jan 31 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -140,8 +155,8 @@
 };
 
 // #endregion 
-
-// #region 7 Jan 30 2025
+ --
+// #region 7 -- Jan 30 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -155,8 +170,8 @@
 };
 
 // #endregion 
-
-// #region 6 Jan 29 2025
+ --
+// #region 6 -- Jan 29 2025
 
 /**
  * @param {string} s
@@ -170,8 +185,8 @@
 };
 
 // #endregion
-
-// #region 5 Jan 28 2025
+ --
+// #region 5 -- Jan 28 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -183,8 +198,8 @@
     return cleanStr === cleanStr.split("").reverse().join("");
 };
 // #endregion
-
-// #region 4 Jan 27 2025
+ --
+// #region 4 -- Jan 27 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -197,8 +212,8 @@
 };
 
 // #endregion
-
-// #region 3 Jan 26 2025
+ --
+// #region 3 -- Jan 26 2025
 /**
  * @param {string} s
  * @return {boolean}
@@ -210,8 +225,8 @@
     return cleanStr === cleanStr.split("").reverse().join("");
 };
 // #endregion
-
-// #region 2 Jan 26 2025
+ --
+// #region 2 -- Jan 26 2025
 // got rid of the i flag for ignore case. we can just make it lowercase before we run regex replace on it.
 
 /**
@@ -225,8 +240,8 @@
     return cleanStr === cleanStr.split("").reverse().join("");
 };
 // #endregion
-
-// #region 1 Jan 16 2025
+ --
+// #region 1 -- Jan 16 2025
 /**
  * @param {string} s
  * @return {boolean}
