@@ -1,4 +1,32 @@
-// #region Feb 11 2025
+// #region 11 -- Feb 18 2025
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+ // Time Complexity: O(n) where n is the number of nodes in the linked list. We must traverse the entire list to reverse each link.
+ // Space Complexity: O(1) because no matter the size of the linked list we just need 3 pointers prev, curr, and next. 
+ var reverseList = function(head) {
+    let prev = null,
+        curr = head;
+    while (curr){
+        const next = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = next;
+    }
+    return prev;
+};
+
+// #endregion
+
+// #region 10 -- Feb 11 2025
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -27,7 +55,7 @@
 
 // #endregion
 
-// #region Feb 6 2025
+// #region 9 -- Feb 6 2025
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -55,7 +83,7 @@
 
 // #endregion 
 
-// #region Feb 2 2025|
+// #region 8 -- Feb 2 2025|
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -82,7 +110,7 @@
 };
 // #endregion 
 
-// #region Feb 1 2025
+// #region 7 -- Feb 1 2025
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -110,7 +138,7 @@
 };
 // #endregion 
 
-// #region Jan 31 2025
+// #region 6 -- Jan 31 2025
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -138,7 +166,7 @@
 };
 // #endregion
 
-// #region Jan 30 2025
+// #region 5 -- Jan 30 2025
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -166,7 +194,7 @@
 };
 // #endregion 
 
-// #region Jan 28 2025
+// #region 4 -- Jan 28 2025
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -193,7 +221,7 @@
 };
 // #endregion
 
-// #region Jan 27 2025
+// #region 3 -- Jan 27 2025
 
  // Time complexity: O(n) - Must visit each node
  // Space Complexity: O(1) - same 3 variables no matter the size of the linked list.
@@ -210,7 +238,7 @@
 };
 // #endregion
 
-// #region Jan 26 2025
+// #region 2 -- Jan 26 2025
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -235,7 +263,7 @@ var reverseList = function(head) {
 };
 // #endregion 
 
-// #region Jan 25 2025
+// #region 1 -- Jan 25 2025
 
 /**
  * Definition for singly-linked list.

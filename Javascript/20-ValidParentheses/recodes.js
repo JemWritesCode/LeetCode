@@ -1,3 +1,31 @@
+// #region 5 -- Feb 18 2025
+
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+
+
+// Time Complexity: O(n) where n is the number of characters in s. We have to traverse the entire string and push each character to the stack.
+// Space Complexity: O(n) where n is the number of characters in s. In the worst case scenario we have a string of all opening brackets so they all get copied over to the stack. 
+var isValid = function(s){
+    const bracketMap = {
+        '(' : ')',
+        '{' : '}',
+        '[' : ']'
+    };
+    const stack = [];
+    for (let c of s){
+        if (bracketMap[c])
+            stack.push(bracketMap[c]);
+        else
+            if (stack.pop() !== c) return false;
+    }
+    return stack.length === 0;
+}
+
+// #endregion
+
 // #region 4 -- Feb 17 2025
 /**
  * @param {string} s
