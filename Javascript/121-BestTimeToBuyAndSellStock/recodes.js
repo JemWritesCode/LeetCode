@@ -1,4 +1,9 @@
+// #region 4 -- Feb 23 2025
+
+// #endregion 
+
 // #region 3 -- Feb 18 2025
+
 /**
  * @param {number[]} prices
  * @return {number}
@@ -18,6 +23,7 @@ var maxProfit = function(prices){
     return profit;
 }
 // #endregion 
+
 // #region 2 --  Feb 11 2025
 // Time Complexity: O(n) where n is the number of elements in the prices array. we have to traverse the entire prices array to find the best profit.
 // Space Complexity: O(1) no matter the size of the prices array we just need the buy and profit variables.
