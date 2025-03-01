@@ -1,3 +1,22 @@
+// #region 21 -- Mar 1 2025
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+
+ // Time Complexity: O(n) where n is the number of elements in the nums array. In the worst case there are no duplicates and we traverse the entire nums array looking for one.
+ // Space Complexity: O(n) where n is the number of elements in the nums array. In the worst case scenario there are no duplicates and we add every element of the nums array to the seen set. 
+ var containsDuplicate = function(nums) {
+    const seen = new Set();
+    for (num of nums){
+        if(seen.has(num)) return true;
+        seen.add(num);
+    }
+    return false;
+};
+
+// #endregion 
+
 // #region 20 -- Feb 26 2025
 /**
  * @param {number[]} nums
