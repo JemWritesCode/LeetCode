@@ -1,3 +1,23 @@
+// #region 15 -- March 26 2025
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+
+ // Time Complexity: O(n) where n is the number of characters in the s string. We must traverse the length of the entire string to count the frequency of each character.
+ // Space Complexity: O(1) No matter the size of the strings passed into the isAnagram function we just need the single 26 length array to count the frequency of the characters. 
+ var isAnagram = function(s, t) {
+    const freq = new Array(26).fill(0);
+    for (const char in s){
+        freq[s.charCodeAt(char) - 97]++;
+        freq[t.charCodeAt(char) - 97]--;
+    }
+    return freq.every(count => count === 0);
+};
+
+// #endregion
+
 // #region 14 -- March 2 2025
 /**
  * @param {string} s
