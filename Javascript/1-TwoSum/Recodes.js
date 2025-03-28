@@ -1,3 +1,21 @@
+// #region 12 -- March 27 2025
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(nums, target){
+    const map = new Map();
+    for(let i = 0; i < nums.length; i++){
+        let diff = target - nums[i];
+        if (map.has(diff)) return [map.get(diff), i]
+        map.set(nums[i], i);
+    }
+    return -1;
+}
+
+// #endregion 
+
 // #region 11 -- March 5 2025 -- First time getting this one without any mistakes in one go. Pretty quickly too. 
 /**
  * @param {number[]} nums
