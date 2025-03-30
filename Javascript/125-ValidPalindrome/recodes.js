@@ -1,3 +1,18 @@
+// #region 21 -- March 29 2025
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+
+ // Time Complexity: O(n) where n is the number of characters in s. toLowerCase, replace, split, reverse, and join are all O(n) operations, which gives us O(5n). But when talking asymptotic notation we drop constants so it becomes O(n). 
+ // Space Complexity: O(n) where n is the number of characters in s. In the worst case scenario s is already all alphanumeric characters so cleanStr will have the same amount of characters in it. 
+ var isPalindrome = function(s) {
+    const cleanStr = s.toLowerCase().replace(/[^a-z0-9]/g, "");
+    return cleanStr === cleanStr.split("").reverse().join("");
+};
+
+// #endregion 
+
 // #region 20 -- Feb 26 2025
 /**
  * @param {string} s
