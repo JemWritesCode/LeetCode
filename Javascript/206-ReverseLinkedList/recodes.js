@@ -1,3 +1,21 @@
+// #region 15 March 31 2025
+
+ // Time Complexity: O(n) where n is equal to the number of nodes in the linked list. We must traverse the entire linked list to reverse each link.
+ // Space Complexity: O(1) No matter the size of the given linked list we still just need the 3 pointers prev, curr, and next.
+ var reverseList = function(head) {
+    let prev = null,
+        curr = head;
+    while(curr){
+        let next = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = next;
+    }
+    return prev;
+};
+
+// #endregion
+
 // #region 14 -- Feb 25 2025
 /**
  * Definition for singly-linked list.
