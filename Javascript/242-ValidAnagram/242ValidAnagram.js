@@ -16,9 +16,9 @@ The only extra space is an array of size 26. Removing the constant this becomes 
 var isAnagram = function(s, t) {
     if (s.length !== t.length) return false;
     const freq = new Array(26).fill(0);
-    for (const char in s){
-        freq[s.charCodeAt(char) -97]++;
-        freq[t.charCodeAt(char) -97]--;
+    for (const charIndex in s){
+        freq[s.charCodeAt(charIndex) - 97]++;
+        freq[t.charCodeAt(charIndex) - 97]--;
     }
     return freq.every(count => count === 0);
 };
