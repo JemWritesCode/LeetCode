@@ -1,11 +1,12 @@
 /* Hash Map
 
-Time Complexity: O(n)
-We must go over up to every single element in the array nums to find the two numbers needed. 
-For each element we perform constant time operations (hash table lookup and insertion)
+ // Time Complexity: O(n) where n is the number of elements in the nums array. 
+ // In the worst case scenario the diff number needed is the last element so we have to traverse n-1 elements to find it. 
+ // We drop constant so we get O(n). For each element we perform constant time operations (hash table lookup and insertion).
 
-Space Complexity: O(n)
-We may need to store up to n-1 elements in the hash table before we find the solution. 
+ // Space Complexity: O(n) where n is the number of elements in the nums array. 
+ // In the worst case scenario the diff number needed is the last element so we store n-1 elements in the map.
+ 
 */
 
 /**
@@ -20,5 +21,5 @@ var twoSum = function(nums, target) {
         if (map.has(diff)) return [map.get(diff), i];
         map.set(nums[i], i);
     }
-    return -1;
+    throw new Error ("No solution for twoSum.");
 };

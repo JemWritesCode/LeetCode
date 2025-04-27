@@ -1,3 +1,25 @@
+// #region 18 -- April 26 2025
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+
+ // Explaination: We create a frequency array to count the frequency of each letter of the alphabet. If the frequency is the same in both strings then we have a valid anagram.
+ // Time Complexity: O(n) where n is the number of characters in either the s or t string. We must go through the entire string to count the frequency of each letter of the alphabet.
+ // Space Complexity: O(1) no matter the size of the strings passed in we just have the same 26 length array to count the frequency of each letter of the alphabet. We traverse the strings themselves in-place. 
+ var isAnagram = function(s, t) {
+    if (s.length !== t.length) return false;
+    const freq = new Array(26).fill(0);
+    for (const charIndex in s){
+        freq[s.charCodeAt(charIndex) - 97]++;
+        freq[t.charCodeAt(charIndex) - 97]--;
+    }
+    return freq.every(count => count === 0);
+};
+
+// #endregion 
+
 // #region 17 -- April 21 2025
 /**
  * @param {string} s
