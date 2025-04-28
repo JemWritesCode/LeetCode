@@ -1,3 +1,26 @@
+// #region 19 -- April 27 2025
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+
+ // Explanation: We use a frequency counter array to see how many times each letter of the alphabet appears in each string. If they match then they are anagrams of each other.
+
+// Time Complexity: O(n) where n is the number of characters in either s or t. We must visit each character of the string to count the frequency of each letter of the alphabet in the entire string.
+// Space Complexity: O(1) no matter the size of the arrays passed in we still just need the same size 26 array for counting the frequency of letters of the alphabet. 
+var isAnagram = function(s, t) {
+    if (s.length !== t.length) return false;
+    const freq = new Array(26).fill(0);
+    for (let i = 0; i < s.length; i++){
+        freq[s.charCodeAt(i) - 97]++;
+        freq[t.charCodeAt(i) - 97]--;
+    }
+    return freq.every(count => count === 0);
+};
+
+// #endregion 
+
 // #region 18 -- April 26 2025
 /**
  * @param {string} s
