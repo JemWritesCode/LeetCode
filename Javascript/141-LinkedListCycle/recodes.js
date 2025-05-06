@@ -1,4 +1,34 @@
-// #region Feb 11 2025
+// #region 11 May 6 2025 -- I got the base idea down even though it's been a while but had a few errors.
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+ 
+ // Floyd's Cycle Detection, aka Fast and Slow aka Tortoise and Hare algorithm 
+
+ var hasCycle = function(head) {
+    if (!head || !head.next) return false; // empty list or only one node
+    let slow = head;
+        fast = head.next;
+    while(fast !== slow){
+        if (!fast || !fast.next) return false; // we found an end to the linked list
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    return true;
+};
+
+// #endregion
+
+// #region 10 Feb 11 2025
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -29,7 +59,7 @@ var hasCycle = function(head) {
 
 // #endregion 
 
-// #region Feb 2 2025
+// #region 9 Feb 2 2025
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -59,7 +89,7 @@ var hasCycle = function(head) {
 };
 // #endregion 
 
-// #region Feb 1 2025
+// #region 8 Feb 1 2025
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -90,7 +120,7 @@ var hasCycle = function(head) {
 
 // #endregion 
 
-// #region Jan 31 2025
+// #region 7 Jan 31 2025
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -119,7 +149,7 @@ var hasCycle = function(head) {
 };
 // #endregion 
 
-// #region Jan 30 2025
+// #region 6 Jan 30 2025
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -148,7 +178,7 @@ var hasCycle = function(head) {
 };
 // #endregion
 
-// #region Jan 29 2025
+// #region 5 Jan 29 2025
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -177,7 +207,7 @@ var hasCycle = function(head) {
 };
 // #endregion 
 
-// #region Jan 28 2025
+// #region 4 Jan 28 2025
 
 /**
  * Definition for singly-linked list.
@@ -207,7 +237,7 @@ var hasCycle = function(head) {
 };
 // #endregion
 
-// #region Jan 27 2025
+// #region 3 Jan 27 2025
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -237,7 +267,7 @@ var hasCycle = function(head) {
 
 // #endregion 
 
-// #region Jan 26 2025
+// #region 2  Jan 26 2025
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -266,7 +296,7 @@ var hasCycle = function(head) {
 };
 // #endregion
 
-// #region Jan 24 2025
+// #region 1 Jan 24 2025
 // Two minutes.
 /**
  * Definition for singly-linked list.
