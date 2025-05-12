@@ -1,3 +1,24 @@
+// #region 18 -- May 12 2025
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+
+// Time Complexity: O(n) where n is the number of elements in the nums array. In the worst case scenario the needed diff is the last number in the array so we search the entire array looking for it.
+// Space Complexity: O(n) where n is the number of elements in the nums array. In the worst case scenario the needed diff is the last number in the arary so we add every element to the map as we look for it. This is both the key and value which gives us O(2n) but we drop the constants when talking asymptotic notation so we get O(n)
+var twoSum = function(nums, target){
+    const map = new Map();
+    for(let i = 0; i < nums.length; i++){
+        let diff = target - nums[i];
+        if(map.has(diff)) return [i, map.get(diff)];
+        map.set(nums[i], i);
+    }
+    throw new Error('twoSum has no solution');
+}
+
+// #endregion 
+
 // #region 17 -- May 9 2025
 /**
  * @param {number[]} nums
