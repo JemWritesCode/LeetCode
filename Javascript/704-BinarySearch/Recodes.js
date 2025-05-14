@@ -1,3 +1,28 @@
+// #region 14 -- May 14 2025
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+
+ // Binary Search
+
+ // Time Complexity: O(log n). Each time we search for the target we cut the searched area in half.
+ // Space Complexity: O(1) No matter the size of the nums array passed in we just need the 3 pointers low, high, and mid
+ var search = function(nums, target) {
+    let low = 0,
+        high = nums.length - 1;
+    for (let i = 0; i < nums.length; i++){
+        let mid = Math.floor((low + high) / 2);
+        if (nums[mid] === target) return mid;
+        else if (nums[mid] < target) low = mid + 1;
+        else high = mid - 1;
+    }
+    return -1;
+};
+
+//
+
 // #region 13 -- May 12 2025
 /**
  * @param {number[]} nums
