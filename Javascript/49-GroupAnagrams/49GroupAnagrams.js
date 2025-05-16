@@ -9,22 +9,18 @@ for every element in the strs array.
 Space Complexity: O (n * m) (Analyze Complexity Confirmed)
 The hash map will store n keys of length m
 
-*/
 /**
  * @param {string[]} strs
  * @return {string[][]}
  */
-function getKey(string){
-    return string.split('').sort().join('')
- }
 var groupAnagrams = function(strs) {
-      let hashMap = new Map();
+    let map = new Map();
 
-    for(let s of strs){
-        const key = getKey(s);
-        if(!hashMap[key])
-            hashMap[key] =[];        
-       hashMap[key].push(s);
+    for (let s of strs){
+        const key = s.split('').sort().join('');
+        if(!map[key])
+            map[key] = [];
+        map[key].push(s);
     }
-    return Object.values(hashMap);
+    return Object.values(map);
 };
