@@ -1,4 +1,22 @@
-// #region 4 -- Feb 23 2025
+// #region 4 -- May 18 2025
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+
+ // Time Complexity: O(n) where n is the number of elements in the pricing array. We must go through the entire array to look for the best profit.
+ // Space Complexity: O(1) We traverse the prices array in-place. No matter the size of the prices array passed in we just need the buy and profit variables. 
+ var maxProfit = function(prices) {
+    let buy = prices[0];
+    let profit = 0;
+    for (let i = 1; i < prices.length; i++){
+        if(prices[i] < buy)
+            buy = prices[i];
+        else if (prices[i] - buy > profit)
+            profit = prices[i] - buy;
+    }
+        return profit;
+};
 
 // #endregion 
 
