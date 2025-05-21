@@ -1,3 +1,46 @@
+// #region 23 -- May 20 2025 -- Got it perfectly in one go while explaining outloud. 5 minutes.
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+
+ // Time Complexity: O(n) where n is the number of elements in the nums array. In the worst case scenario the needed complement is at the end of the nums array so we traverse the entire array looking for it. 
+// Space Complexity: O(n) where n is the number of elements in the nums array. In the worst case the needed complement is at the end of the nums array so we copy every element of the nums array into the map. 
+var twoSum = function(nums, target) {
+    // nums[i] + complement = target
+    const map = new Map();
+    for (let i = 0; i < nums.length; i++){
+        let complement = target - nums[i];
+        if(map.has(complement)) return [i, map.get(complement)];
+        map.set(nums[i], i);
+    }
+    throw new Error('No solution found for twoSum');
+};
+
+// #endregion
+
+// #region 22 -- May 19 2025
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+
+ // Time Complexity: O(n) where n is the number of elements in the nums array. In the worst case scenario the needed diff is at the end of the nums array and we traverse the entire array before we find it.
+// Space Complexity: O(n) where n is the number of elements in the nums array. In the worst case scenario the needed diff is at the end of the nums array and we copy every element of the nums array into the map. 
+var twoSum = function(nums, target) {
+    const map = new Map();
+    for (let i = 0; i < nums.length; i++){
+        let diff = target - nums[i];
+        if(map.has(diff)) return [map.get(diff), i];
+        map.set(nums[i], i);
+    }
+    throw new Error('No solution found for twoSum.');
+};
+
+// #endregion 
+
 // #region 21 -- May 17 2025
 /**
  * @param {number[]} nums
