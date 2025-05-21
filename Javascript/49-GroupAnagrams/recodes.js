@@ -1,3 +1,27 @@
+// # region 3 -- May 21 2025 
+/**
+ * @param {string[]} strs
+ * @return {string[][]}
+ */
+
+/* Time Complexity: O(n * m) where n is the number of strings 
+in the input array s. and m is the average length of a string in strs.
+
+Space Complexity: O(n * m) The hash map will store n keys of length m.
+*/
+var groupAnagrams = function(strs) {
+    let map = new Map();
+    for (let s of strs){
+        const key = s.split('').sort().join('');
+        if (!map[key])
+            map[key] = [];
+        map[key].push(s);
+    }
+    return Object.values(map);
+ }
+
+ // #endregion
+
 // #region 2 -- May 15 2025
 /* Hash Map
 

@@ -1,3 +1,24 @@
+// #region 24 -- May 21 2025 -- small syntax error I had to fix but I explained it outloud okay. 
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+
+ // Time Complexity: O(n) where n is the number of characters in a string.
+// Space Complexity: O(1) no matter the size of the strings passed in we just use a fixed sized array of 26 to count the frequency of each character of the alphabet.
+var isAnagram = function(s, t) {
+    if (s.length !== t.length) return false;
+    const freq = new Array(26).fill(0);
+    for (let i = 0; i < s.length; i++){
+        freq[s.charCodeAt(i) - 97]++;
+        freq[t.charCodeAt(i) - 97]--;
+    }
+    return freq.every(count => count === 0);
+};
+
+// #endregion
+
 // #region 23 -- May 15 2025
 /**
  * @param {string} s
