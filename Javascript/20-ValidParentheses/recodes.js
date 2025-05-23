@@ -1,3 +1,23 @@
+// #region 8 -- May 22 2025
+
+
+var isValid = function(s){
+    const bracketMap = {
+        '(' : ')',
+        '{' : '}',
+        '[' : ']'
+    };
+    const stack = [];
+    for (let c of s){
+        if(bracketMap[c]) stack.push(bracketMap[c]);
+        else if(stack.pop() !== c) return false;
+    }
+    return stack.length === 0;
+}
+
+// #endregion
+
+
 // #region 7 -- May 11 2025
 /**
  * @param {string} s
