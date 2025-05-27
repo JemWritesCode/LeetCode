@@ -1,3 +1,37 @@
+// #region 25 -- May 27 2025
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */  
+
+/* SCOPE 
+There is only one solution that works. 
+*/
+
+/* ALGORITHM
+    Traverse through the array and we need to find the complementary number to the current number
+    that would add up to target.
+    We will store numbers in a hash map as we go along for fast lookups and so we have a list of
+    potential complementary numbers that only contains the numbers we've gone through so far
+
+**  ASYMPTOTIC NOTATION
+    Time Complexity: O(n) where n is the number of elements in the nums array. In the worst case scenario the needed diff is at the end of the array and we traverse the entire array looking for it.
+
+    Space Complexity: O(n) where n is the number of elements in the nums array. In the worst case scenario the needed diff is at the end of the array and we store every element of the nums array in the hash map before we find it.
+*/
+var twoSum = function(nums, target) {
+    const map = new Map();
+    for(let i = 0; i < nums.length; i++){
+        let diff = target - nums[i]; 
+        if(map.has(diff)) return [i, map.get(diff)];
+        map.set(nums[i], i);
+    }
+};
+
+// #endregion
+
+
 // #region 24 -- May 22 2025
 /**
  * @param {number[]} nums
