@@ -1,3 +1,34 @@
+// #region 13 -- June 14 2025
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+
+ // Floyd's Cycle Detection aka Fast and Slow aka Turtoise and Hare
+// Time Complexity: O(n) where n is the number of nodes in the linked list. We will need to visit them all to determine if there is a cycle. Either we reach the end of the list or we find the cycle.
+// Space Complexity: O(1) We traverse the linked list in place using only the slow and fast pointers no matter the size of the linked list.
+var hasCycle = function(head) {
+    if (!head || !head.next) return false; // empty list or single node.
+    let slow = head,
+        fast = head.next;
+    while (slow !== fast){
+        if (!fast || !fast.next) return false; // end of list found
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    return true; // slow is the same as fast so it has a cycle
+};
+
+// #endregion
+
 // #region 12 May 9 2025 -- I got this right away but there's some nuance to the time complexity I'm a bit unsure of.
 /**
  * Definition for singly-linked list.
