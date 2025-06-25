@@ -1,3 +1,24 @@
+// #region 28 -- June 25 2025
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+
+ // Time Complexity: O(n) where n is the number of characters in one of the given strings. We must traverse both strings at the same time all the way through in order to count the frequency of each letter of the alphabet.
+ // Space Complexity: O(1) no matter the size of the strings passed in we just need the fixed size frequency array to count the 26 letters of the alphabet.
+var isAnagram = function(s, t) {
+    if (s.length !== t.length) return false;
+    const freq = new Array(26).fill(0);
+    for(let i = 0; i < s.length; i++){
+        freq[s.charCodeAt(i) - 97]++;
+        freq[t.charCodeAt(i) - 97]--;
+    }
+    return freq.every(count => count === 0);
+};
+
+// #endregion
+
 // #region 27 -- June 6 2025 
 /**
  * @param {string} s
