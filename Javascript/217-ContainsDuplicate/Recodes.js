@@ -1,3 +1,22 @@
+// #region 38 -- June 24 2025 
+
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+// Time Complexity: O(n) where n is the number of elements in the nums array. In the worst case scenario there are no duplicates and we traverse the entire nums array looking for one.
+// Space Complexity: O(n) where n is the number of elements in the nums array. In the worst case scenario there are no duplciates and we copy every element of the nums array into the map.
+var containsDuplicate = function(nums) {
+        const set = new Set();
+        for(let num of nums){
+            if (set.has(num)) return true;
+            set.add(num);
+        }
+        return false;
+};
+
+// #endregion
+
 // #region 37 -- June 6 2025 
 /**
  * @param {number[]} nums

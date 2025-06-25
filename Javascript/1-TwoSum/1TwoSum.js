@@ -17,8 +17,8 @@
 var twoSum = function(nums, target) {
     const map = new Map();
     for (let i = 0; i < nums.length; i++){
-        const diff = target - nums[i];
-        if (map.has(diff)) return [map.get(diff), i];
+        const complement = target - nums[i];
+        if (map.has(complement)) return [map.get(complement), i];
         map.set(nums[i], i);
     }
     throw new Error ("No solution for twoSum.");

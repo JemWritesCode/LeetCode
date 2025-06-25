@@ -1,3 +1,24 @@
+// #region 32 -- June 24 2025 
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+
+ // Time Complexity: O(n) in the worst case scenario the complement needed is at the end of the nums array and we traverse the entire array looking for it
+ // Space Complexity: O(n) in the worst case scenario the complement needed is at the end of the nums array and we add every element of the nums array to the map as we look for it.
+var twoSum = function(nums, target) {
+    const map = new Map();
+    for(let i = 0; i < nums.length; i++){
+        let complement = target - nums[i];
+        if(map.has(complement)) return [map.get(complement), i];
+        map.set(nums[i], i);
+    }
+    throw new Error('No solution found for TwoSum');
+};
+
+// #endregion
+
 // #region 31 -- June 13 2025 
 /**
  * @param {number[]} nums

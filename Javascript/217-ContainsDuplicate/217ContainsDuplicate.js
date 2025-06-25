@@ -20,10 +20,10 @@ var containsDuplicate = function(nums){
 // still O(n) but best case scenario runtime is Omega(1)
 
 var containsDuplicate = function(nums) {
-    const seen = new Set();
+    const set = new Set();
     for (const num of nums){
-        if (seen.has(num)) return true;
-        seen.add(num);
+        if (set.has(num)) return true;
+        set.add(num);
     }
     return false;
 };
