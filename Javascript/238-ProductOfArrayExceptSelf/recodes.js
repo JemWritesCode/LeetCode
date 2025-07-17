@@ -1,3 +1,33 @@
+// #region 2 -- July 17 2025
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+
+// prefix and postfix.
+// Time Complexity: O(n) Where n is the number of elements in the nums array.
+// We go forward through the array and then backwards for O(2n). When discussing asymptotic notation we generally drop the constant so we get O(n).
+// Space Complexity: O(1) The problem description says the results array doesn't  count for space complexity. Other than that we just need the prefix and suffix variables no matter the size of the nums array.
+var productExceptSelf = function (nums) {
+  const result = new Array(nums.length);
+
+  //Prefix
+  let prefix = 1;
+  for (let i = 0; i < nums.length; i++) {
+    result[i] = prefix;
+    prefix *= nums[i];
+  }
+  // Suffix
+  let suffix = 1;
+  for (let i = nums.length - 1; i >= 0; i--) {
+    result[i] *= suffix;
+    suffix *= nums[i];
+  }
+  return result;
+};
+
+// #endregion
+
 // #region 1 -- July 6 2025 -- I couldn't code it from memory but the code and concept make plenty of sense.
 /**
  * @param {number[]} nums
