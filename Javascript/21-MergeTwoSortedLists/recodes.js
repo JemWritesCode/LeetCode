@@ -1,3 +1,38 @@
+// #region 5 -- July 26 2025 -- Almost by myself just forgot to .val
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} list1
+ * @param {ListNode} list2
+ * @return {ListNode}
+ */
+
+// Time Complexity: O(n + m) where n is the number of nodes in list1 and m is the number of nodes in list2. We must visit each node to merge them into the new list.
+// Space Complexity: O(1) No matter the size of the lists given we just need the dummy and curr node. For asymptotic notation we generally do not consider the input or output memory, but only the auxiliary memory.
+var mergeTwoLists = function (list1, list2) {
+  let dummy = new ListNode(),
+    curr = dummy;
+  while (list1 && list2) {
+    if (list1.val < list2.val) {
+      curr.next = list1;
+      list1 = list1.next;
+    } else {
+      curr.next = list2;
+      list2 = list2.next;
+    }
+    curr = curr.next;
+  }
+  curr.next = list1 || list2;
+  return dummy.next;
+};
+
+// #e
+
 // #region 4 -- July 25 2025 -- small mishap with the curr.next pointer but I generally had this
 /**
  * Definition for singly-linked list.
