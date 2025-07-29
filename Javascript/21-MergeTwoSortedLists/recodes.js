@@ -1,3 +1,37 @@
+// #region 8 -- July 29 2025 -- got it one go and fast
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} list1
+ * @param {ListNode} list2
+ * @return {ListNode}
+ */
+// Time Complexity: O(n + m) where n is the number of nodes in list1 and m is the number of nodes in list 2. We must visit each node once in order to merge them into the new list.
+// Space Complexity: O(1). Generally with asymptotic notation we only count auxiliary memory so we don't count the input or output linked lists. Aside from that all we need is the dummy node and the current node.
+var mergeTwoLists = function (list1, list2) {
+  let dummy = new ListNode();
+  let curr = dummy;
+  while (list1 && list2) {
+    if (list1.val < list2.val) {
+      curr.next = list1;
+      list1 = list1.next;
+    } else {
+      curr.next = list2;
+      list2 = list2.next;
+    }
+    curr = curr.next;
+  }
+  curr.next = list1 || list2;
+  return dummy.next;
+};
+
+// #endregion
+
 // #region 7 -- July 28 2025
 /**
  * Definition for singly-linked list.

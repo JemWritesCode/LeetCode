@@ -1,3 +1,27 @@
+// #region 10 -- July 29 2025
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+
+// Time Complexity: O(n) where n is the number of characters in the s string. We must visit every character in the string to ensure there are matching parentheses.
+// Space Complexity: O(n) where n is the number of characters in the string. In the worst case scenario all of the characters in the string are opening parentheses and the stack becomes the same size as the string.
+var isValid = function (s) {
+  const bracketMap = {
+    "{": "}",
+    "[": "]",
+    "(": ")",
+  };
+  const stack = [];
+  for (let c of s) {
+    if (bracketMap[c]) stack.push(bracketMap[c]);
+    else if (stack.pop() !== c) return false;
+  }
+  return stack.length === 0;
+};
+
+// #endregion
+
 // #region 9 -- July 27 2025
 /**
  * @param {string} s
