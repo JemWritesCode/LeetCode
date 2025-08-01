@@ -1,3 +1,18 @@
+// #region 26 -- Aug 1 2025
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+
+ // Time Complexity: O(n) where n is the number of characters in s
+ // Space Complexity: O(n) where n is the number of characters in s
+var isPalindrome = function(s) {
+    let cleanStr = s.toLowerCase().replace(/[^0-9a-z]/g, '');
+    return cleanStr === cleanStr.split('').reverse().join('');
+};
+
+//#endregion
+
 // #region 25 -- May 20 2025
 /**
  * @param {string} s
