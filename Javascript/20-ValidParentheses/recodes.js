@@ -1,3 +1,28 @@
+// #region 11 -- Aug 3 2025
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+
+// Time Complexity: O(n) where n is the number of characters in s. We must visit each character in the string to add it to the stack.
+// Space Complexity: O(n) where n is the number of characters in s. In the worst case scenario the entire string is just opening brackets so the stack becomes  the same size as the string.
+var isValid = function (s) {
+  const bracketMap = {
+    "(": ")",
+    "{": "}",
+    "[": "]",
+  };
+
+  let stack = [];
+  for (let c of s) {
+    if (bracketMap[c]) stack.push(bracketMap[c]);
+    else if (c !== stack.pop()) return false;
+  }
+  return true;
+};
+
+// #endregion
+
 // #region 10 -- July 29 2025
 /**
  * @param {string} s
