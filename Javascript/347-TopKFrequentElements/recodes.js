@@ -1,3 +1,34 @@
+// #region 5 -- Aug 5 2025
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+ */
+
+//Time Complexity: O(n) where n is the number of elements in the nums array.
+// Space Complexity: O(n) where n is the number of elements in the nums array. Worst case all elements are unique and the map holds every element of the nums array
+var topKFrequent = function (nums, k) {
+  // count frequency of each number in the nums array and store it in a map
+  let freqMap = new Map();
+  let bucket = [];
+  let result = [];
+  for (let num of nums) {
+    freqMap.set(num, (freqMap.get(num) || 0) + 1);
+  }
+  // Bucket sort but the index is the frequency
+  for (let [num, freq] of freqMap) {
+    bucket[freq] = (bucket[freq] || new Set()).add(num);
+  }
+  // get the top k out of the bucket sorted array.
+  for (let i = bucket.length - 1; i >= 0; i--) {
+    if (bucket[i]) result.push(...bucket[i]); // get all of the sets at that index with the spread operator
+    if (result.length === k) break; // thats enough slices!!!
+  }
+  return result;
+};
+
+// #endregion
+
 // #region 4 -- July 31 2025 -- Needed a little help with implementation. I wrote the asymptotic notation this time but then had AI help me refine it.
 /**
  * @param {number[]} nums

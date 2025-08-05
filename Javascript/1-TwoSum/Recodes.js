@@ -1,3 +1,23 @@
+// #region 37 -- Aug 5 2025
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+// Time Complexity: O(n) where n is the number of elements in the nums array. In the worst case scenario the needed diff is at the end of the nums array and we traverse the entire array looking for it.
+// Space Complexity: O(n) where n is the number of elements in the nums array. In the worst case scenario the needed diff is at the end of the nums array and we add every element to the map as we look for it.
+var twoSum = function (nums, target) {
+  let map = new Map();
+  for (let i = 0; i < nums.length; i++) {
+    let diff = target - nums[i];
+    if (map.has(diff)) return [map.get(diff), i];
+    map.set(nums[i], i);
+  }
+  throw new Error("No solution found for twoSum");
+};
+
+//#endregion
+
 // #region 36 -- July 29 2025
 /**
  * @param {number[]} nums
