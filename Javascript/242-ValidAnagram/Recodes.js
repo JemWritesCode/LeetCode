@@ -1,3 +1,24 @@
+// #region 31 -- Aug 6 2025
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+
+// Time Complexity: O(n) Where n is the number of characters in s or t. We traverse them at the same time but we must visit every character to count the frequency that it occurs in the string.
+// Space Complexity: O(1) No matter the size of the strings passed in we just need to make the same 26 length frequency array for each letter of the alphabet since the problem description says this will only include lowercase letters of the alphabet.
+var isAnagram = function (s, t) {
+  if (s.length !== t.length) return false;
+  let freq = new Array(26).fill(0);
+  for (let i = 0; i < s.length; i++) {
+    freq[s.charCodeAt(i) - 97]++;
+    freq[t.charCodeAt(i) - 97]--;
+  }
+  return freq.every((count) => count === 0);
+};
+
+//#endregion
+
 // #region 30 -- July 30 2025
 /**
  * @param {string} s

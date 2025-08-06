@@ -1,3 +1,40 @@
+// #region 6 -- Aug 6 2025
+
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+ */
+
+// Reverse Bucket Sort where the index of the array is the frequency that a num occurs in the nums array.
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+
+var topKFrequent = function (nums, k) {
+  let freqMap = new Map();
+  let bucket = [];
+  let result = []; // This won't count towards asymptotic notation since it's for the output.
+
+  // Make a hashmap that stores the number and the frequency that it occurs for fast lookups.
+  for (let num of nums) {
+    freqMap.set(num, (freqMap.get(num) || 0) + 1);
+  }
+
+  // Add it to the reverse bucket sort
+  for (let [num, freq] of freqMap) {
+    bucket[freq] = (bucket[freq] || new Set()).add(num);
+  }
+
+  // get the top k out of the buckets and put it into the result set.
+  for (let i = bucket.length - 1; i >= 0; i--) {
+    if (bucket[i]) result.push(...bucket[i]);
+    if (result.length === k) break;
+  }
+  return result;
+};
+
+// #endregion
+
 // #region 5 -- Aug 5 2025
 /**
  * @param {number[]} nums
