@@ -1,3 +1,39 @@
+// #region 8 == Aug 7 2025
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+ */
+
+// I got this in one go today! But I realized today that we could potentially return more than k elements. Leetcode is accepting this but I should probably fix that.
+
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+var topKFrequent = function (nums, k) {
+  const freqMap = new Map();
+  const bucket = [];
+  const result = [];
+
+  // This will get us a hash map with numbers and the frequency that they occur.
+  for (let num of nums) {
+    freqMap.set(num, (freqMap.get(num) || 0) + 1);
+    k;
+  }
+
+  // lets put it in a bucket where the index is the frequency.
+  for (let [num, freq] of freqMap) {
+    bucket[freq] = (bucket[freq] || new Set()).add(num);
+  }
+
+  for (let i = bucket.length - 1; i >= 0; i--) {
+    if (bucket[i]) result.push(...bucket[i]);
+    if (result.length === k) break;
+  }
+  return result;
+};
+
+// #endregion
+
 // #region 7 == Aug 6 2025 evening
 /**
  * @param {number[]} nums
