@@ -1,3 +1,32 @@
+// #region 9 -- Aug 8
+
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+ */
+var topKFrequent = function (nums, k) {
+  const freqMap = new Map();
+  const bucket = [];
+  const result = [];
+
+  for (let num of nums) {
+    freqMap.set(num, (freqMap.get(num) || 0) + 1);
+  }
+
+  for (let [num, freq] of freqMap) {
+    bucket[freq] = (bucket[freq] || new Set()).add(num);
+  }
+
+  for (let i = bucket.length - 1; i >= 0; i--) {
+    if (bucket[i]) result.push(...bucket[i]);
+    if (result.length === k) break;
+  }
+  return result;
+};
+
+// #endregion
+
 // #region 8 == Aug 7 2025
 /**
  * @param {number[]} nums
