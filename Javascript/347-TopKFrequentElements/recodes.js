@@ -1,3 +1,36 @@
+// #region 10 -- Aug 9 -- Finally got it in one go
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+ */
+
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+var topKFrequent = function (nums, k) {
+  let freqMap = new Map();
+  let bucket = [];
+  let result = [];
+
+  // Put numbers and their frequency of occurance into a hashmap for fast lookups.
+  for (let num of nums) {
+    freqMap.set(num, (freqMap.get(num) || 0) + 1);
+  }
+
+  // We need to put it in a bucket sort array where the index is the frequency that it occurs so we can get the top k later.
+  for (let [num, freq] of freqMap) {
+    bucket[freq] = (bucket[freq] || new Set()).add(num);
+  }
+
+  for (let i = bucket.length - 1; i >= 0; i--) {
+    if (bucket[i]) result.push(...bucket[i]);
+    if (result.length === k) break;
+  }
+  return result;
+};
+
+//#endregion
+
 // #region 9 -- Aug 8
 
 /**
