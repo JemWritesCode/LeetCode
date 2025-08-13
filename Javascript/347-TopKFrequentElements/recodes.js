@@ -1,3 +1,36 @@
+// #region 12 -- Aug 12 -- Got it in one go while explaining outloud
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+ */
+
+ // Time Complexity: O(n)
+ // Space Complexity: O(n)
+var topKFrequent = function(nums, k) {
+    let freqMap = new Map();
+    let bucket = [];
+    let result = [];
+
+    for (let num of nums){
+        freqMap.set(num, (freqMap.get(num) || 0) + 1);
+    }
+
+    for(let [num, freq] of freqMap){
+        bucket[freq] = (bucket[freq] || new Set()).add(num);
+    }
+
+    for(let freq = bucket.length - 1; freq >= 0; freq--){
+        if (bucket[freq]) result.push(...bucket[freq]);
+        if(result.length === k) break;
+    }
+    return result;
+
+};
+
+// #endregion
+
+
 // #region 11 -- Aug 10 /**
  * @param {number[]} nums
  * @param {number} k
