@@ -1,3 +1,37 @@
+// #region 16 -- Aug 17 2025
+
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+ */
+
+ // Map that maps num to the frequency that it occurs for fast lookups.
+ // push that into a bucket sort but the index is the count
+ // and push that into a results array.
+var topKFrequent = function(nums, k) {
+    let freqMap = new Map();
+    let bucket = [];
+    let result = [];
+
+    for(let num of nums){
+        freqMap.set(num, (freqMap.get(num) || 0) + 1);
+    }
+
+    for(let [num, freq] of freqMap){
+        bucket[freq] = (bucket[freq] || new Set()).add(num);
+    }
+
+    for(let i = bucket.length - 1; i >= 0; i--){
+        if(bucket[i]) result.push(...bucket[i]);
+        if(result.length === k) break;
+    }
+    return result;
+};
+
+//#endregion
+
+
 // #region 15 -- Aug 16 2025
 /**
  * @param {number[]} nums

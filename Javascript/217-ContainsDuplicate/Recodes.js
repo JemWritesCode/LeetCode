@@ -1,3 +1,19 @@
+// #region 43 -- Aug 17 2025
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var containsDuplicate = function (nums) {
+  let set = new Set();
+  for (let num of nums) {
+    if (set.has(num)) return true;
+    set.add(num);
+  }
+  return false;
+};
+
+// #endregion
+
 // #region 42 -- Aug 9 2025
 /**
  * @param {number[]} nums

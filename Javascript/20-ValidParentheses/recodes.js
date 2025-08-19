@@ -1,3 +1,25 @@
+// #region 12 -- Aug 18 2025
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function (s) {
+  let bracketMap = {
+    "(": ")",
+    "{": "}",
+    "[": "]",
+  };
+
+  let stack = [];
+  for (let c of s) {
+    if (bracketMap[c]) stack.push(bracketMap[c]);
+    else if (c !== stack.pop()) return false;
+  }
+  return true;
+};
+
+//#endregion
+
 // #region 11 -- Aug 3 2025
 /**
  * @param {string} s
