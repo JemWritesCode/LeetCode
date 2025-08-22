@@ -1,3 +1,30 @@
+// #region 23 -- Aug 22 2025 -- practiced outloud 1 go
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+
+// Binary Search
+
+// Asymptotic Notation
+// Time Complexity: O(log n) where n is the number of elements in the nums array. We are cutting the searchable area in half every time.
+// Space Complexity: O(1) No matter the size of the nums array passed in we just need the low, high, and mid pointers. We traverse the array in place.
+
+var search = function (nums, target) {
+  let low = 0,
+    high = nums.length - 1;
+  for (let i = 0; i < nums.length; i++) {
+    let mid = Math.floor((low + high) / 2);
+    if (nums[mid] === target) return mid;
+    else if (nums[mid] > target) high = mid - 1;
+    else low = mid + 1;
+  }
+  return -1;
+};
+
+//#endregion
+
 // #region 22 -- Aug 10 2025
 /**
  * @param {number[]} nums
