@@ -1,3 +1,33 @@
+// #region 17 -- Aug 23 2025 -- explained outloud. 
+// there's a weird test case this is failing on submission that says it should return -1? is this a new test case? I see it in the example now but the directions
+// don't say what it wants us to return -1 for? Is it for when there's two numbers appearing at same frequency?
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+ */
+var topKFrequent = function(nums, k) {
+    const freqMap = new Map();
+    const bucket = [];
+    const result = [];
+
+    for(let num of nums){
+        freqMap.set(num, (freqMap.get(num) || 0) + 1);
+    }
+
+    for(let [num, freq] of freqMap){
+        bucket[freq] = (bucket[freq] || new Set()).add(num);
+    }
+
+    for(let freq = bucket.length - 1; freq >= 0; freq--){
+        if(bucket[freq]) result.push(...bucket[freq]);
+        if(result.length === k) break;
+    }
+    return result;
+};
+
+// #endregion
+
 // #region 16 -- Aug 21 2025 -- one go
 /**
  * @param {number[]} nums
