@@ -1,3 +1,36 @@
+// #region 18 -- Aug 28 2025 -- outloud explain
+
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+ */
+
+ // Asymptotic Notation
+ // Time Complexity: O(n) -- where n is the number of elements in the nums array. we have to go through the whole nums array to add each element to the freqMap. then again going through them all with bucket[] which is capped to the size of in worst case n number of elements if every number in the nums array is unique. then when we push into the results array worst case scenario k is equal to n. So we have O(3n) but when we're talking about asymptotic notation we drop the constant. So we just O(n)
+ // Space Complexity: O(n) -- where n is the number of elements in the nums array. We store every number into the frequency map, then in worst case scenario also the bucket array and results array. So it's O(3n) but we drop the constant and say O(n);
+var topKFrequent = function(nums, k) {
+    const freqMap = new Map();
+    const bucket = [];
+    const result = [];
+
+    for(let num of nums){
+        freqMap.set(num, (freqMap.get(num) || 0) + 1);
+    }
+
+    for(let [num, freq] of freqMap){
+        bucket[freq] = (bucket[freq] || new Set()).add(num);
+    }
+
+    for(let i = bucket.length - 1; i >= 0; i--){
+        if(bucket[i]) result.push(...bucket[i]);
+        if(result.length === k) break;
+    }
+    return result;
+};
+
+//#endregion
+
 // #region 17 -- Aug 23 2025 -- explained outloud. 
 // there's a weird test case this is failing on submission that says it should return -1? is this a new test case? I see it in the example now but the directions
 // don't say what it wants us to return -1 for? Is it for when there's two numbers appearing at same frequency?
