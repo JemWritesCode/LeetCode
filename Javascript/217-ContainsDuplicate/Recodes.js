@@ -1,3 +1,23 @@
+// #region 44 -- Aug 31 2025
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+
+// Asymptotic Notation
+// Time Complexity: O(n) where n is equal to the number of elements in the nums array. In the worst case scenario there are no duplicates and we traverse the entire array looking for one.
+// Space Complexity: O(n) where n is equal to the number of elements in the nums array. Because if there are no duplicates we will have to copy every element into the set.
+var containsDuplicate = function (nums) {
+  const set = new Set();
+  for (let num of nums) {
+    if (set.has(num)) return true;
+    set.add(num);
+  }
+  return false;
+};
+
+//#endregion
+
 // #region 43 -- Aug 17 2025
 /**
  * @param {number[]} nums
