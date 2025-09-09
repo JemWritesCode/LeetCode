@@ -1,3 +1,26 @@
+// #region 24 -- spe 9 2025
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+
+// Time Complexity: O(log n) where n is the number of elements in the nums array. In the worst case scenario the target does not exist in the array. We keep dividing the searchable area in half each time so we get log n.
+// Space Complexity: O(1) No matter the size of the nums array passed in we just need the low, high, and mid variables to traverse the array in place.
+var search = function (nums, target) {
+  let low = 0,
+    high = nums.length - 1;
+  for (let i = 0; i < nums.length; i++) {
+    let mid = Math.floor((low + high) / 2);
+    if (nums[mid] === target) return mid;
+    else if (nums[mid] > target) high = mid - 1;
+    else low = mid + 1;
+  }
+  return -1;
+};
+
+//#endregion
+
 // #region 23 -- Aug 22 2025 -- practiced outloud 1 go
 /**
  * @param {number[]} nums
