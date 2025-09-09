@@ -1,3 +1,34 @@
+// #region 19 -- Sep 9 2025
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number[]}
+ */
+
+ // Time Complexity: O(n)
+ // Space Complexity: O(n)
+var topKFrequent = function(nums, k) {
+    let freqMap = new Map();
+    let bucket = [];
+    let result = [];
+
+    for (let num of nums){
+        freqMap.set(num, (freqMap.get(num) || 0) + 1);
+    }
+
+    for(let [num, freq] of freqMap){
+        bucket[freq] = (bucket[freq] || new Set()).add(num);
+    }
+
+    for(let i = bucket.length - 1; i >= 0; i--){
+        if(bucket[i]) result.push(...bucket[i]);
+        if(result.length === k) break;
+    }
+    return result;
+};
+
+//#endregion
+
 // #region 18 -- Aug 28 2025 -- outloud explain
 
 /**
