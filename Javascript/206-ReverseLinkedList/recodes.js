@@ -1,3 +1,33 @@
+// #region 31 -- Oct 6 2025
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+
+// Time Complexity: O(n) where n is the number of nodes in the linked list. We must visit each node to reverse the link.
+// Space Complexity: O(1) we traverse the linked list in place. We only need the curr, prev, and next variables.
+
+var reverseList = function (head) {
+  let curr = head,
+    prev = null;
+  while (curr) {
+    let next = curr.next;
+    curr.next = prev;
+    prev = curr;
+    curr = next;
+  }
+  return prev;
+};
+
+// #endregion
+
 // #region 30 -- Aug 31 2025
 /**
  * Definition for singly-linked list.
