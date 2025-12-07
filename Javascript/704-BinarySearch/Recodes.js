@@ -1,9 +1,28 @@
-// #region 25 -- Oct 8 2025
+// #region 26 -- Dec 7 2025
 /**
  * @param {number[]} nums
  * @param {number} target
  * @return {number}
  */
+var search = function (nums, target) {
+  let low = 0,
+    high = nums.length - 1;
+  for (let i = 0; i < nums.length; i++) {
+    let mid = Math.floor((high + low) / 2);
+    if (target === nums[mid]) return mid;
+    else if (target > nums[mid]) low = mid + 1;
+    else high = mid - 1;
+  }
+  return -1;
+};
+// #endregion
+
+// #region 25 -- Oct 8 2025
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */ v;
 
 // Time Complexity: O(log n) where n is the number of elements in the nums array. We cut the searchable area in half each time as we look for the target.
 // Space Complexity: O(1) We traverse the nums array in place. We only need the low, high, and mid variable no matter the size of the nums array.
