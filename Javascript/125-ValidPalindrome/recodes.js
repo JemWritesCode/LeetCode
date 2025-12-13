@@ -1,3 +1,18 @@
+// #region 27 Dec 12 2025
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+
+//Time Complexity: O(n) we must visit each letter in the string 5 times to lowercase, replace, split ,reverse, and join. which would be 5n but we drop the 5 when talking asymptotic notation so it becomes O(n);
+// Space Complexity: O(n) we must make a copy in cleanStr.
+var isPalindrome = function(s){
+   var cleanStr = s.toLowerCase().replace(/[^a-z0-9]/g, "");
+   return cleanStr === cleanStr.split("").reverse().join("");
+};
+
+//#endregion
+
 // #region 26 -- Aug 1 2025
 /**
  * @param {string} s
