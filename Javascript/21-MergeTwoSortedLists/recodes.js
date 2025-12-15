@@ -1,3 +1,38 @@
+// #region 11 -- Dec 14 2025
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} list1
+ * @param {ListNode} list2
+ * @return {ListNode}
+ */
+
+// Time Complexity: O(n + m) where n is the number of nodes in list1 and m is the number of nodes in list2. We must visit all nodes to change their links.
+// Space Complexity: O(1) No matter the size of the list we just need dummy and cur. We merge the lists in place and just change their next pointers.
+var mergeTwoLists = function (list1, list2) {
+  let dummy = new ListNode();
+  let cur = dummy;
+  while (list1 && list2) {
+    if (list1.val < list2.val) {
+      cur.next = list1;
+      list1 = list1.next;
+    } else {
+      cur.next = list2;
+      list2 = list2.next;
+    }
+    cur = cur.next;
+  }
+  cur.next = list1 || list2;
+  return dummy.next;
+};
+
+//#endregion
+
 // #region 10 -- Dec 13 2025
 /**
  * Definition for singly-linked list.
