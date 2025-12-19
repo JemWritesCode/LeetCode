@@ -1,3 +1,30 @@
+// #region 3 -- Dec 18 2025
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+var productExceptSelf = function (nums) {
+  const result = new Array(nums.length);
+
+  // Prefix
+  let prefix = 1;
+  for (let i = 0; i < nums.length; i++) {
+    result[i] = prefix;
+    prefix *= nums[i];
+  }
+  //Suffix
+  let suffix = 1;
+  for (let i = nums.length - 1; i >= 0; i--) {
+    result[i] *= suffix;
+    suffix *= nums[i];
+  }
+  return result;
+};
+
+//#endregion
+
 // #region 2 -- July 17 2025
 /**
  * @param {number[]} nums
