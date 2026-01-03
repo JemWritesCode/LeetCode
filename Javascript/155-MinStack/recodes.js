@@ -1,11 +1,4 @@
-/*
-New things were optional chaining operator ?. and ?? Null Coalescing operator
-
-Time complexity: everything is O(1) per the requirements
-
-Space Complexity: O(n) to hold the stack.
-
-*/
+// #region 1 -- Jan 2 2026
 
 var MinStack = function () {
   this.st = [];
@@ -50,3 +43,5 @@ MinStack.prototype.getMin = function () {
  * var param_3 = obj.top()
  * var param_4 = obj.getMin()
  */
+
+// #endregion
