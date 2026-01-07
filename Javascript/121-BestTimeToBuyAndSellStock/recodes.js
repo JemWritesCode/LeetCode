@@ -1,3 +1,20 @@
+// #region 6 -- Jan 6 2026
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function (prices) {
+  let buy = prices[0];
+  let profit = 0;
+  for (let right = 1; right < prices.length; right++) {
+    if (prices[right] < buy) buy = prices[right];
+    else if (prices[right] - buy > profit) profit = prices[right] - buy;
+  }
+  return profit;
+};
+
+// #endregion
+
 // #region 5 -- July 14 2025
 // I had to troubleshoot a bit but got it on my own. I could write it more cleanly though. But I suppose in some ways the verbosity lends to clarity.
 
