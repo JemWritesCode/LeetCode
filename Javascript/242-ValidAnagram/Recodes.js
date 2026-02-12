@@ -1,3 +1,22 @@
+//#region 32 -- Feb 12 2025
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isAnagram = function (s, t) {
+  if (s.length !== t.length) return false;
+  let frequencyCounter = new Array(26).fill(0);
+  let offset = "a".charCodeAt(0);
+  for (let i = 0; i < s.length; i++) {
+    frequencyCounter[s.charCodeAt(i) - offset]++;
+    frequencyCounter[t.charCodeAt(i) - offset]--;
+  }
+  return frequencyCounter.every((count) => count === 0);
+};
+
+//#endregion
+
 // #region 31 -- Aug 6 2025
 /**
  * @param {string} s

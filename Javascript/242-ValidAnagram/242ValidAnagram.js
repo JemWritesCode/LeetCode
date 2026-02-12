@@ -13,12 +13,13 @@ The only extra space is an array of size 26. Removing the constant this becomes 
  * @param {string} t
  * @return {boolean}
  */
-var isAnagram = function(s, t) {
-    if (s.length !== t.length) return false;
-    const freq = new Array(26).fill(0);
-    for (const charIndex in s){
-        freq[s.charCodeAt(charIndex) - 97]++;
-        freq[t.charCodeAt(charIndex) - 97]--;
-    }
-    return freq.every(count => count === 0);
+var isAnagram = function (s, t) {
+  if (s.length !== t.length) return false;
+  let frequencyCounter = new Array(26).fill(0);
+  let offset = "a".charCodeAt(0);
+  for (let i = 0; i < s.length; i++) {
+    frequencyCounter[s.charCodeAt(i) - offset]++;
+    frequencyCounter[t.charCodeAt(i) - offset]--;
+  }
+  return frequencyCounter.every((count) => count === 0);
 };
