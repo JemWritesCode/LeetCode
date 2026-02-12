@@ -1,3 +1,25 @@
+// #region 34 -- Feb 11 2026
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+
+//Time Complexity: O(n) where n is the number of elements in the nums array. In the worst case the needed elements are the last two elements and we have to go through the entire array to reach them.
+// Space Complexity O(n) where n is the number of elements in the nums array. In the worst case we much store every element into the map as we search for the two pairs. Or a scenario that the problem set doesn't cover where we have an array of invalid input with no two correct elements.
+var twoSum = function (nums, target) {
+  let map = new Map();
+  for (let i = 0; i < nums.length; i++) {
+    let diff = target - nums[i];
+    if (map.has(diff)) return [i, map.get(diff)];
+    map.set(nums[i], i);
+  }
+  throw new Error("No solution found for TwoSum");
+};
+
+//#endregion
+
 // #region 33 -- Dec 10 2025
 /**
  * @param {number[]} nums
