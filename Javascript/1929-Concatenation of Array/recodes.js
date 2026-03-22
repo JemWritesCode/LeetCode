@@ -1,3 +1,15 @@
+// #region 2 -- March 21, 2026
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var getConcatenation = function (nums) {
+  return [...nums, ...nums];
+};
+
+// #endregion
+
 // #region 1 -- Feb 11, 2026
 
 // Well this isn't very robust if we wanted to change the problem a bit. But it passes the test and I cracked it out without help.

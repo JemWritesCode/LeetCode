@@ -1,3 +1,19 @@
+// #region 48 -- March 21, 2026
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var containsDuplicate = function (nums) {
+  let set = new Set();
+  for (let num of nums) {
+    if (set.has(num)) return true;
+    set.add(num);
+  }
+  return false;
+};
+
+// #endregion
+
 // #region 47 -- Feb 11 2026
 /**
  * @param {number[]} nums
