@@ -1,3 +1,23 @@
+// #region 27 -- March 22, 2026
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var search = function (nums, target) {
+  let low = 0,
+    high = nums.length - 1;
+  for (let i = 0; i < nums.length; i++) {
+    let mid = Math.floor((low + high) / 2);
+    if (target === nums[mid]) return mid;
+    else if (target > nums[mid]) low = mid + 1;
+    else high = mid - 1;
+  }
+  return -1;
+};
+
+// #endregion
+
 // #region 26 -- Dec 7 2025
 /**
  * @param {number[]} nums
