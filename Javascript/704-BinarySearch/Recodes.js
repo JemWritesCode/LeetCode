@@ -1,3 +1,26 @@
+// #region 28 -- April 4, 2026
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+
+// Time Complexity: O(log n) where n is the number of elements in the nums array. We cut the searched area in half each time we look.
+// Space Complexity: O(1) we are traversing the nums array in place and only need the low, high, and mid pointers.
+var search = function (nums, target) {
+  let low = 0,
+    high = nums.length - 1;
+  for (let i = 0; i < nums.length; i++) {
+    let mid = Math.floor((low + high) / 2);
+    if (nums[mid] === target) return mid;
+    else if (nums[mid] > target) high = mid - 1;
+    else low = mid + 1;
+  }
+  return -1;
+};
+
+//#endregion
+
 // #region 27 -- March 22, 2026
 /**
  * @param {number[]} nums
