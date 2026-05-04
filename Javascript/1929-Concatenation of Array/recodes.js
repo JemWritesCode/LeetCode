@@ -1,3 +1,14 @@
+// #region 3 -- May 3, 2026
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var getConcatenation = function (nums) {
+  return [...nums, ...nums];
+};
+
+// #endregion
+
 // #region 2 -- March 21, 2026
 
 /**
