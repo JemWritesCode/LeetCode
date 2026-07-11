@@ -1,3 +1,23 @@
+// #region 35 -- July 10, 2026
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+// Time Complexity: O(n) where n is the number of characters in the s string. We have to count the frequency of every character in the string by traversing through it.
+// Space Complexity: O(1) - We traverse the strings in place. We only need the frequency array to count the characters and that's set at 26 for the alphabet.
+var isAnagram = function (s, t) {
+  if (s.length != t.length) return false;
+  let freq = new Array(26).fill(0);
+  for (let i = 0; i < s.length; i++) {
+    freq[s.charCodeAt(i) - "a".charCodeAt(0)]++;
+    freq[t.charCodeAt(i) - "a".charCodeAt(0)]--;
+  }
+  return freq.every((count) => count === 0);
+};
+
+//#endregion
+
 // #region 34 -- April 7, 2026
 
 /**
