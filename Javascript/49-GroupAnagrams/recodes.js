@@ -1,3 +1,19 @@
+// #region 5 -- July 17, 2025
+var groupAnagrams = function (strs) {
+  const map = new Map();
+  for (const s of strs) {
+    const count = new Array(26).fill(0);
+    for (const ch of s) count[ch.charCodeAt(0) - 97]++;
+    const key = count.join("#");
+
+    if (!map.has(key)) map.set(key, []);
+    map.get(key).push(s);
+  }
+  return [...map.values()];
+};
+
+// #endregion
+
 // # region 4 -- Jan 8 2026
 
 /**

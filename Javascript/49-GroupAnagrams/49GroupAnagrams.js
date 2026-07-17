@@ -1,26 +1,37 @@
-/* Hash Map
+/* Frequency Counting
+Time: O(n x k) We aren't sorting we're just counting.
+Space(n x k)
+*/
+var groupAnagrams = function (strs) {
+  const map = new Map();
+  for (const s of strs) {
+    const count = new Array(26).fill(0);
+    for (const ch of s) count[ch.charCodeAt(0) - 97]++;
+    const key = count.join("#");
 
-Time Complexity: O(n * m * log(m)) (Analyze Complexity Confirmed)
-n is number of strings in the input array strs
-m is the average length of a string in strs
-string.split('').sort().join('') takes O(m * log(m)) and then you have to do it 
-for every element in the strs array.
+    if (!map.has(key)) map.set(key, []);
+    map.get(key).push(s);
+  }
+  return [...map.values()];
+};
 
-Space Complexity: O (n * m) (Analyze Complexity Confirmed)
-The hash map will store n keys of length m
+/* Sorting.
+Sort every word and put into a hash map.
+Sorting each word is O(k log k), times n number of input arrays
 
+Time: O(m x n log n)
+Space: O(m x n)
 /**
  * @param {string[]} strs
  * @return {string[][]}
  */
-var groupAnagrams = function(strs) {
-    let map = new Map();
+var groupAnagrams = function (strs) {
+  let map = new Map();
 
-    for (let s of strs){
-        const key = s.split('').sort().join('');
-        if(!map[key])
-            map[key] = [];
-        map[key].push(s);
-    }
-    return Object.values(map);
+  for (const s of strs) {
+    const key = s.split("").sort().join("");
+    if (!map.has(key)) map.set(key, []);
+    map.get(key).push(s);
+  }
+  return [...map.values()];
 };
