@@ -4,6 +4,9 @@
  * @param {number[]} nums
  * @return {boolean}
  */
+
+// Time Complexity: O(n) where n is the number of elements in the nums array. In the worst case we have no duplicates and we go through the entire nums array looking for one.
+// Space Complexity: O(n) where n is the number of elements in the nums array. In the worst case we have no duplicates so set becomes a copy of the nums array.
 var containsDuplicate = function (nums) {
   let set = new Set();
   for (let i = 0; i < nums.length; i++) {
