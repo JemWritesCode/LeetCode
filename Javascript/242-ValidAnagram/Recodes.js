@@ -1,3 +1,25 @@
+// #region 36 -- August 27, 2026
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+
+// Time Complexity: O(n) -- where n is the number of characters in either string. We must traverse the entire string to count the frequency of each letter of the alphabet.
+// Space Complexity: O(1) - We only create offset and frequencyCounter which are both fixed size no matter the size of the strings passed in.
+var isAnagram = function (s, t) {
+  if (s.length !== t.length) return false;
+  let frequencyCounter = new Array(26).fill(0);
+  const offset = "a".charCodeAt(0);
+  for (let i = 0; i < s.length; i++) {
+    frequencyCounter[s.charCodeAt(i) - offset]++;
+    frequencyCounter[t.charCodeAt(i) - offset]--;
+  }
+  return frequencyCounter.every((count) => count === 0);
+};
+
+// #endregion
+
 // #region 35 -- July 10, 2026
 /**
  * @param {string} s
