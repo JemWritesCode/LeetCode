@@ -1,3 +1,23 @@
+// #region 3 -- August 28, 2026
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+
+// Time Complexity: O(n) - where n is the number of characters in the first string. Worst case scenario the entire first string is the prefix so we must traverse the entire thing.
+// Space Complexity: O(1) - we are traversing the strings in place
+var longestCommonPrefix = function (strs) {
+  if (!strs || strs.length === 0) return "";
+  for (let i = 0; i < strs[0].length; i++) {
+    for (const s of strs) {
+      if (s[i] !== strs[0][i]) return s.slice(0, i);
+    }
+  }
+  return strs[0]; // we reached the end of the first string. so the entire first string is the common prefix.
+};
+
+// #endregion
+
 // #region 2 -- July 16, 2026
 /**
  * @param {string[]} strs
